@@ -1,3 +1,4 @@
+import 'package:city_management/pages/sign_up_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -18,7 +19,7 @@ class _SignInPageState extends State<SignInPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 40,
+              height: 29,
             ),
             const Align(
               alignment: Alignment.center,
@@ -174,24 +175,29 @@ class _SignInPageState extends State<SignInPage> {
             const SizedBox(
               height: 19,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 81),
-              child: Row(
-                children: [
-                  const Text(
-                    'Do not have an account?',
-                    style: TextStyle(fontSize: 16, color: Colors.blue),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text('Sign Up',
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.blue)),
-                  )
-                ],
-              ),
+            Row(
+              children: [
+                const SizedBox(
+                  width: 81,
+                ),
+                const Text(
+                  'Do not have an account?',
+                  style: TextStyle(fontSize: 16, color: Colors.blue),
+                ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context)
+                        .push(MaterialPageRoute(builder: (context) {
+                      return SignUpPage();
+                    }));
+                  },
+                  child: const Text('Sign Up',
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.blue)),
+                )
+              ],
             ),
           ],
         ),
